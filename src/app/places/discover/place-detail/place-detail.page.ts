@@ -28,10 +28,20 @@ export class PlaceDetailPage implements OnInit {
   }
 
   OnBookPlace() {
-    //this.navCtrl.navigateBack('places/places-tabs/discover');
-    this.modalCtrl.create({ component: CreateBookingComponent  }).then(
-      modalEle => { modalEle.present();
-    });
+      this.modalCtrl.create({
+                        component: CreateBookingComponent,
+                        componentProps: { selectedPlace: this.place } })
+            .then(
+              modalEle => {
+                modalEle.present();
+                return modalEle.onDidDismiss();
+            })
+            .then( resultData => {
+              console.log(resultData.data, resultData.role);
+              if (resultData.role === 'confirm') {
+                 console.log('booked');
+              }
+            });
   }
 
 }
