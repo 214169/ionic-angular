@@ -16,6 +16,10 @@ export class DiscoverPage implements OnInit {
     this.loadedPlace = this.placesService.places;
   }
 
+  ionViewWillEnter() {
+    this.loadedPlace = this.placesService.places;
+  }
+
   onFilterUpdate(event: CustomEvent<SegmentChangeEventDetail>) {
     console.log(event.detail);
   }
