@@ -1,0 +1,8 @@
+{
+  "appId": "cde.io.ionic.angular",
+  "appName": "ionic-angular",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}
